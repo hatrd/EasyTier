@@ -737,6 +737,7 @@ impl Service {
             username: None,
             working_directory: Some(options.work_directory.clone()),
             environment: None,
+            disable_restart_on_failure: false,
         };
         if self.status()? != ServiceStatus::NotInstalled {
             return Err(anyhow::anyhow!(
